@@ -4,20 +4,21 @@ package org.ndexbio.communitydetection.rest.model;
  *
  * @author churas
  */
-public class CommunityDetectionRequestStatus {
+public class CommunityDetectionResultStatus {
     
     public static final String SUBMITTED_STATUS = "submitted";
     public static final String PROCESSING_STATUS = "processing";
     public static final String COMPLETE_STATUS = "complete";
     public static final String FAILED_STATUS = "failed";
 
+    private String _id;
     private String _status;
     private String _message;
     private int _progress;
     private long _wallTime;
     private long _startTime;
     
-    public CommunityDetectionRequestStatus(){
+    public CommunityDetectionResultStatus(){
         
     }
     
@@ -26,7 +27,7 @@ public class CommunityDetectionRequestStatus {
      * to {@code startTime} passed into this method.
      * @param startTime Current time in milliseconds, usually set with value from {@link java.lang.System.currentTimeMillis()}
      */
-    public CommunityDetectionRequestStatus(long startTime){
+    public CommunityDetectionResultStatus(long startTime){
         _startTime = startTime;
     }
     
@@ -35,10 +36,11 @@ public class CommunityDetectionRequestStatus {
      * from {@code cdr} passed in
      * @param cdr {@link org.ndexbio.communitydetection.rest.model.CommunityDetectionResult} to copy from
      */
-    public CommunityDetectionRequestStatus(CommunityDetectionResult cdr){
+    public CommunityDetectionResultStatus(CommunityDetectionResult cdr){
         if (cdr == null){
             return;
         }
+        _id = cdr.getId();
         _status = cdr.getStatus();
         _message = cdr.getMessage();
         _progress = cdr.getProgress();
@@ -52,7 +54,7 @@ public class CommunityDetectionRequestStatus {
      * @param cdrs
      * @return Returns this object
      */
-    public CommunityDetectionRequestStatus updateStartTime(CommunityDetectionRequestStatus cdrs){
+    public CommunityDetectionResultStatus updateStartTime(CommunityDetectionResultStatus cdrs){
         if (cdrs == null){
             return this;
         }
@@ -60,6 +62,14 @@ public class CommunityDetectionRequestStatus {
             _startTime = cdrs.getStartTime();
         }
         return this;
+    }
+
+    public String getId() {
+        return _id;
+    }
+
+    public void setId(String _id) {
+        this._id = _id;
     }
     
     public String getStatus() {
