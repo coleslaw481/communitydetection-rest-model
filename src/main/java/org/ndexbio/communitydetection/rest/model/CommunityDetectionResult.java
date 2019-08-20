@@ -1,5 +1,7 @@
 package org.ndexbio.communitydetection.rest.model;
 
+import io.swagger.v3.oas.annotations.media.Schema;
+
 
 /**
  *
@@ -20,6 +22,8 @@ public class CommunityDetectionResult extends CommunityDetectionResultStatus {
         return this;
     }
 
+    @Schema(description="Result as edge list in form of: SOURCENODE1\\tTARGETNODE1\\tINTERACTION1\\n",
+            example="6,5,term-term;5,1,term-gene;5,2,term-gene;5,3,term-gene;5,4,term-gene;\\n")
     public String getResult() {
         return result;
     }

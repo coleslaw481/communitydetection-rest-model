@@ -7,7 +7,7 @@
     <version>0.1.0</version>
     <packaging>jar</packaging>
 
-    <name>NDEx Community Detection Object Model</name>
+    <name>Community Detection Object Model</name>
 
     <properties>
         <endorsed.dir>${project.build.directory}/endorsed</endorsed.dir>

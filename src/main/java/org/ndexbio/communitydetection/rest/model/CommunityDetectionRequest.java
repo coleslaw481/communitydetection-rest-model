@@ -1,5 +1,6 @@
 package org.ndexbio.communitydetection.rest.model;
 
+import io.swagger.v3.oas.annotations.media.Schema;
 import java.util.Map;
 
 /**
@@ -19,6 +20,7 @@ public class CommunityDetectionRequest {
      * Gets the name of the algorithm to use with this request
      * @return 
      */
+    @Schema(description="Name community detection algorithm to run", example="louvain")
     public String getAlgorithm() {
         return _algorithm;
     }
@@ -37,6 +39,7 @@ public class CommunityDetectionRequest {
      * 
      * @return 
      */
+    @Schema(description="Set to true to request a directed graph from community detection algorithm")
     public Boolean getGraphdirected() {
         return _graphdirected;
     }
@@ -63,6 +66,7 @@ public class CommunityDetectionRequest {
      * SOURCENODE1\tTARGETNODE1\nSOURCENODE2\tTARGETNODE2\n
      * @return 
      */
+    @Schema(description="Edge list in form of SOURCENODE1\\tTARGETNODE1\\nSOURCENODE2\\tTARGETNODE2\\n with optional 3rd tab delimited column containing weight")
     public String getEdgeList() {
         return _edgeList;
     }
@@ -76,6 +80,7 @@ public class CommunityDetectionRequest {
         this._edgeList = _edgeList;
     }
 
+    @Schema(description="IP address where request originated")
     public String getIpAddress() {
         return _ipAddress;
     }
@@ -84,6 +89,7 @@ public class CommunityDetectionRequest {
         this._ipAddress = _ipAddress;
     }
     
+    @Schema(description="Optional custom parameters for community detection algorithm")
     public Map<String, String> getCustomParameters() {
         return _customParameters;
     }

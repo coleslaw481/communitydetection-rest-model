@@ -1,5 +1,7 @@
 package org.ndexbio.communitydetection.rest.model;
 
+import io.swagger.v3.oas.annotations.media.Schema;
+
 /**
  *
  * @author churas
@@ -11,6 +13,10 @@ public class CommunityDetectionResultStatus {
     public static final String COMPLETE_STATUS = "complete";
     public static final String FAILED_STATUS = "failed";
 
+    public static final String COMMA_DELIM_STATUS = SUBMITTED_STATUS + "," +
+                                                    PROCESSING_STATUS + "," +
+                                                    COMPLETE_STATUS + "," +
+                                                    FAILED_STATUS;
     private String _id;
     private String _status;
     private String _message;
@@ -64,6 +70,7 @@ public class CommunityDetectionResultStatus {
         return this;
     }
 
+    @Schema(description="Id of Community Detection Request", example="261fb9b7-75af-4f1a-9caa-e57a4b5fc349")
     public String getId() {
         return _id;
     }
@@ -72,6 +79,7 @@ public class CommunityDetectionResultStatus {
         this._id = _id;
     }
     
+    @Schema(description="Status of task can be (" + COMMA_DELIM_STATUS + ")", example=SUBMITTED_STATUS)
     public String getStatus() {
         return _status;
     }
@@ -80,6 +88,7 @@ public class CommunityDetectionResultStatus {
         this._status = _status;
     }
 
+    @Schema(description="null or a message denoting a possible issue")
     public String getMessage() {
         return _message;
     }
@@ -88,6 +97,7 @@ public class CommunityDetectionResultStatus {
         this._message = _message;
     }
 
+    @Schema(description="int between 0 and 100 denoting progress of task")
     public int getProgress() {
         return _progress;
     }
@@ -96,6 +106,7 @@ public class CommunityDetectionResultStatus {
         this._progress = _progress;
     }
 
+    @Schema(description="Walltime in milliseconds task took to run")
     public long getWallTime() {
         return _wallTime;
     }
@@ -104,6 +115,7 @@ public class CommunityDetectionResultStatus {
         this._wallTime = _wallTime;
     }
 
+    @Schema(description="Time in milliseconds since 1969 epoch when task started")
     public long getStartTime() {
         return _startTime;
     }

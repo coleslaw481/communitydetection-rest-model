@@ -6,13 +6,13 @@
 
 [make]: https://www.gnu.org/software/make
 
-NDEx Enrichment Object Model
-============================
+Community Detection Object Model
+=================================
 
-[![Build Status](https://travis-ci.org/ndexbio/ndex-enrichment-rest-model.svg?branch=master)](https://travis-ci.org/ndexbio/ndex-enrichment-rest-model)
-[![Coverage Status](https://coveralls.io/repos/github/ndexbio/ndex-enrichment-rest-model/badge.svg?branch=master)](https://coveralls.io/github/ndexbio/ndex-enrichment-rest-model?branch=master)
+[![Build Status](https://travis-ci.org/ndexbio/communitydetection-rest-model.svg?branch=master)](https://travis-ci.org/ndexbio/communitydetection-rest-model)
+[![Coverage Status](https://coveralls.io/repos/github/ndexbio/communitydetection-rest-model/badge.svg?branch=master)](https://coveralls.io/github/ndexbio/communitydetection-rest-model?branch=master)
 
-Contains Java Pojo objects needed by NDEx Enrichment services
+Contains Java Pojo objects needed by Community Detection REST Service
 
 
 
@@ -35,15 +35,15 @@ Build requirements:
 
 ```Bash
 # In lieu of git one can just download repo and unzip it
-git clone https://github.com/ndexbio/ndex-enrichment-rest-model.git
+git clone https://github.com/ndexbio/communitydetection-rest-model.git
 
-cd ndex-enrichment-rest-model
+cd communitydetection-rest-model
 mvn install
 
 ```
 
 The above command will create a jar file under **target/** named 
-**ndex-enrichment-rest-model-\<VERSION\>.jar** 
+**communitydetection-rest-model-\<VERSION\>.jar** 
 
 
 
