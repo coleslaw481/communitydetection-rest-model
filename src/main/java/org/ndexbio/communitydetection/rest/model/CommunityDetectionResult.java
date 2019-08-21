@@ -23,7 +23,7 @@ public class CommunityDetectionResult extends CommunityDetectionResultStatus {
     }
 
     @Schema(description="Result as edge list in form of: SOURCENODE1\\tTARGETNODE1\\tINTERACTION1\\n",
-            example="6,5,term-term;5,1,term-gene;5,2,term-gene;5,3,term-gene;5,4,term-gene;\\n")
+            example="6,5,c-c;5,1,c-m;5,2,c-m;5,3,c-m;5,4,c-m;\\n")
     public String getResult() {
         return result;
     }
