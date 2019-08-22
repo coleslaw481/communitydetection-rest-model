@@ -11,7 +11,6 @@ public class CommunityDetectionRequest {
     
     private String _algorithm;
     private Boolean _graphdirected;
-    private String _rootnetwork;
     private String _edgeList;
     private String _ipAddress;
     private Map<String, String> _customParameters;
@@ -51,14 +50,6 @@ public class CommunityDetectionRequest {
      */
     public void setGraphdirected(Boolean _graphdirected) {
         this._graphdirected = _graphdirected;
-    }
-
-    public String getRootnetwork() {
-        return _rootnetwork;
-    }
-
-    public void setRootnetwork(String _rootnetwork) {
-        this._rootnetwork = _rootnetwork;
     }
 
     /**

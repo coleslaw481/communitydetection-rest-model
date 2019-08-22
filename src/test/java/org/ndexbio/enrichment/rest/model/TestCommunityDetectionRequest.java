@@ -15,7 +15,6 @@ public class TestCommunityDetectionRequest {
         eq.setAlgorithm("algo");
         eq.setEdgeList("edgey");
         eq.setGraphdirected(Boolean.TRUE);
-        eq.setRootnetwork("root");
         assertEquals("algo", eq.getAlgorithm());
         
 

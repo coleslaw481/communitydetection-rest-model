@@ -6,8 +6,8 @@ import io.swagger.v3.oas.annotations.media.Schema;
  *
  * @author churas
  */
-public class CommunityDetectionResultStatus extends JobStatus {
-    
+public class TermMappingResultStatus extends JobStatus {
+
     private String _id;
     private String _status;
     private String _message;
@@ -15,7 +15,7 @@ public class CommunityDetectionResultStatus extends JobStatus {
     private long _wallTime;
     private long _startTime;
     
-    public CommunityDetectionResultStatus(){
+    public TermMappingResultStatus(){
         
     }
     
@@ -24,7 +24,7 @@ public class CommunityDetectionResultStatus extends JobStatus {
      * to {@code startTime} passed into this method.
      * @param startTime Current time in milliseconds, usually set with value from {@link java.lang.System.currentTimeMillis()}
      */
-    public CommunityDetectionResultStatus(long startTime){
+    public TermMappingResultStatus(long startTime){
         _startTime = startTime;
     }
     
@@ -33,7 +33,7 @@ public class CommunityDetectionResultStatus extends JobStatus {
      * from {@code cdr} passed in
      * @param cdr {@link org.ndexbio.communitydetection.rest.model.CommunityDetectionResult} to copy from
      */
-    public CommunityDetectionResultStatus(CommunityDetectionResult cdr){
+    public TermMappingResultStatus(CommunityDetectionResult cdr){
         if (cdr == null){
             return;
         }
@@ -51,7 +51,7 @@ public class CommunityDetectionResultStatus extends JobStatus {
      * @param cdrs
      * @return Returns this object
      */
-    public CommunityDetectionResultStatus updateStartTime(CommunityDetectionResultStatus cdrs){
+    public TermMappingResultStatus updateStartTime(TermMappingResultStatus cdrs){
         if (cdrs == null){
             return this;
         }
