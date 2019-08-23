@@ -1,5 +1,6 @@
 package org.ndexbio.communitydetection.rest.model;
 
+import com.fasterxml.jackson.databind.JsonNode;
 import io.swagger.v3.oas.annotations.media.Schema;
 import java.util.Map;
 
@@ -11,7 +12,7 @@ public class CommunityDetectionRequest {
     
     private String algorithm;
     private Boolean graphdirected;
-    private String edgeList;
+    private JsonNode data;
     private String ipAddress;
     private Map<String, String> customParameters;
 
@@ -53,24 +54,21 @@ public class CommunityDetectionRequest {
     }
 
     /**
-     * Gets edgelist as string which should be in format of
+     * Gets data as string which should be in format of
      * SOURCENODE1\tTARGETNODE1\nSOURCENODE2\tTARGETNODE2\n
      * @return 
      */
-    @Schema(description="Edge as CX network, for optional weights set edge attribute named 'weight OR "
-            + "Edge list in form of SOURCENODE1\\tTARGETNODE1\\nSOURCENODE2\\tTARGETNODE2\\n "
-            + "with optional 3rd tab delimited column containing weight")
-    public String getEdgeList() {
-        return edgeList;
+    @Schema(description="data as json fragment ")
+    public JsonNode getData() {
+        return data;
     }
 
     /**
-     * Sets edgelist as string which should be in format of
-     * SOURCENODE1\tTARGETNODE1\nSOURCENODE2\tTARGETNODE2\n
-     * @param _edgeList 
+     * Sets data as string which is json fragment format
+     * @param data 
      */
-    public void setEdgeList(String edgeList) {
-        this.edgeList = edgeList;
+    public void setData(JsonNode data) {
+        this.data = data;
     }
 
     @Schema(description="IP address where request originated")

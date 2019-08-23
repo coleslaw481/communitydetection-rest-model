@@ -1,5 +1,6 @@
 package org.ndexbio.communitydetection.rest.model;
 
+import com.fasterxml.jackson.databind.JsonNode;
 import io.swagger.v3.oas.annotations.media.Schema;
 
 
@@ -8,7 +9,7 @@ import io.swagger.v3.oas.annotations.media.Schema;
  * @author churas
  */
 public class CommunityDetectionResult extends CommunityDetectionResultStatus {
-    private String result;
+    private JsonNode result;
  
     public CommunityDetectionResult(){
         super();
@@ -22,13 +23,12 @@ public class CommunityDetectionResult extends CommunityDetectionResultStatus {
         return this;
     }
 
-    @Schema(description="Result in either CX format or as edge list in form of: SOURCENODE1\\tTARGETNODE1\\tINTERACTION1;",
-            example="6,5,c-c;5,1,c-m;5,2,c-m;5,3,c-m;5,4,c-m;\\n")
-    public String getResult() {
+    @Schema(description="Result in json fragment")
+    public JsonNode getResult() {
         return result;
     }
 
-    public void setResult(String result) {
+    public void setResult(JsonNode result) {
         this.result = result;
     }
 }

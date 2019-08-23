@@ -1,5 +1,6 @@
 package org.ndexbio.enrichment.rest.model;
 
+import com.fasterxml.jackson.databind.node.TextNode;
 import org.ndexbio.communitydetection.rest.model.CommunityDetectionRequest;
 import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;
@@ -13,10 +14,9 @@ public class TestCommunityDetectionRequest {
     public void testGettersAndSetters(){
         CommunityDetectionRequest eq = new CommunityDetectionRequest();
         eq.setAlgorithm("algo");
-        eq.setEdgeList("edgey");
         eq.setGraphdirected(Boolean.TRUE);
+        eq.setData(new TextNode("hi"));
         assertEquals("algo", eq.getAlgorithm());
-        
-
+        assertEquals("hi", eq.getData().asText());
     }
 }

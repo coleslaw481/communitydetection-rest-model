@@ -4,7 +4,7 @@
 
     <groupId>org.ndexbio.communitydetection.rest.model</groupId>
     <artifactId>communitydetection-rest-model</artifactId>
-    <version>0.2.1</version>
+    <version>0.3.0</version>
     <packaging>jar</packaging>
 
     <name>Community Detection Object Model</name>
@@ -15,7 +15,8 @@
         <resteasy.version>3.6.3.Final</resteasy.version>
         <junit.version>5.3.1</junit.version>
         <easymock.version>3.0</easymock.version>
-        <jackson.version>2.9.8</jackson.version>
+        <jackson.version>2.9.9</jackson.version>
+        <jackson-databind.version>2.9.9.3</jackson-databind.version>
         <logback.version>1.2.3</logback.version>
         <commons-math3.version>3.6.1</commons-math3.version>
         <commons-io.version>2.6</commons-io.version>
@@ -54,6 +55,16 @@
             <artifactId>hamcrest-core</artifactId>
             <version>${hamcrest.version}</version>
             <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>com.fasterxml.jackson.core</groupId>
+            <artifactId>jackson-databind</artifactId>
+            <version>${jackson-databind.version}</version>
+        </dependency>
+        <dependency>
+                <groupId>com.fasterxml.jackson.jaxrs</groupId>
+                <artifactId>jackson-jaxrs-base</artifactId>
+                <version>${jackson.version}</version>
         </dependency>
     </dependencies>
     <scm>
