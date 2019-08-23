@@ -12,11 +12,11 @@ public class ServerStatus {
     public static final String OK_STATUS = "ok";
     public static final String ERROR_STATUS = "error";
     
-    private String _status;
-    private int _pcDiskFull;
-    private List<Float> _load;
-    private List<Integer> _queries;
-    private String _restVersion;
+    private String status;
+    private int pcDiskFull;
+    private List<Float> load;
+    private List<Integer> queries;
+    private String restVersion;
     
 
     public ServerStatus(){
@@ -30,47 +30,47 @@ public class ServerStatus {
     @Schema(description="Status of server", allowableValues={ServerStatus.OK_STATUS,
                                                              ServerStatus.ERROR_STATUS})
     public String getStatus() {
-        return _status;
+        return status;
     }
 
-    public void setStatus(String _status) {
-        this._status = _status;
+    public void setStatus(String status) {
+        this.status = status;
     }
 
     @Schema(description="Gets how full disk is as a percentage 0 - 100")
     public int getPcDiskFull() {
-        return _pcDiskFull;
+        return pcDiskFull;
     }
 
-    public void setPcDiskFull(int _pcDiskFull) {
-        this._pcDiskFull = _pcDiskFull;
+    public void setPcDiskFull(int pcDiskFull) {
+        this.pcDiskFull = pcDiskFull;
     }
 
     @Schema(description="List of 3 floats containing 1 minute, 5 minute, 15minute load")
     public List<Float> getLoad() {
-        return _load;
+        return load;
     }
 
-    public void setLoad(List<Float> _load) {
-        this._load = _load;
+    public void setLoad(List<Float> load) {
+        this.load = load;
     }
 
     @Schema(description="List of 5 integers containing # queries in last minute, 5 minutes, 15 minutes, hour, 24 hours")
     public List<Integer> getQueries() {
-        return _queries;
+        return queries;
     }
 
-    public void setQueries(List<Integer> _queries) {
-        this._queries = _queries;
+    public void setQueries(List<Integer> queries) {
+        this.queries = queries;
     }
 
    
     @Schema(description="Gets version of this service")
     public String getRestVersion() {
-        return _restVersion;
+        return restVersion;
     }
 
-    public void setRestVersion(String _restVersion) {
-        this._restVersion = _restVersion;
+    public void setRestVersion(String restVersion) {
+        this.restVersion = restVersion;
     }    
 }

@@ -8,12 +8,12 @@ import io.swagger.v3.oas.annotations.media.Schema;
  */
 public class CommunityDetectionResultStatus extends JobStatus {
     
-    private String _id;
-    private String _status;
-    private String _message;
-    private int _progress;
-    private long _wallTime;
-    private long _startTime;
+    private String id;
+    private String status;
+    private String message;
+    private int progress;
+    private long wallTime;
+    private long startTime;
     
     public CommunityDetectionResultStatus(){
         
@@ -25,7 +25,7 @@ public class CommunityDetectionResultStatus extends JobStatus {
      * @param startTime Current time in milliseconds, usually set with value from {@link java.lang.System.currentTimeMillis()}
      */
     public CommunityDetectionResultStatus(long startTime){
-        _startTime = startTime;
+        this.startTime = startTime;
     }
     
     /**
@@ -37,12 +37,12 @@ public class CommunityDetectionResultStatus extends JobStatus {
         if (cdr == null){
             return;
         }
-        _id = cdr.getId();
-        _status = cdr.getStatus();
-        _message = cdr.getMessage();
-        _progress = cdr.getProgress();
-        _wallTime = cdr.getWallTime();
-        _startTime = cdr.getStartTime();
+        id = cdr.getId();
+        status = cdr.getStatus();
+        message = cdr.getMessage();
+        progress = cdr.getProgress();
+        wallTime = cdr.getWallTime();
+        startTime = cdr.getStartTime();
     }
  
     /**
@@ -55,63 +55,63 @@ public class CommunityDetectionResultStatus extends JobStatus {
         if (cdrs == null){
             return this;
         }
-        if (cdrs.getStartTime() > _startTime){
-            _startTime = cdrs.getStartTime();
+        if (cdrs.getStartTime() > startTime){
+            startTime = cdrs.getStartTime();
         }
         return this;
     }
 
     @Schema(description="Id of Community Detection Request", example="261fb9b7-75af-4f1a-9caa-e57a4b5fc349")
     public String getId() {
-        return _id;
+        return id;
     }
 
-    public void setId(String _id) {
-        this._id = _id;
+    public void setId(String id) {
+        this.id = id;
     }
     
     @Schema(description="Status of task can be (" + COMMA_DELIM_STATUS + ")", example=SUBMITTED_STATUS)
     public String getStatus() {
-        return _status;
+        return status;
     }
 
-    public void setStatus(String _status) {
-        this._status = _status;
+    public void setStatus(String status) {
+        this.status = status;
     }
 
     @Schema(description="null or a message denoting a possible issue")
     public String getMessage() {
-        return _message;
+        return message;
     }
 
-    public void setMessage(String _message) {
-        this._message = _message;
+    public void setMessage(String message) {
+        this.message = message;
     }
 
     @Schema(description="int between 0 and 100 denoting progress of task")
     public int getProgress() {
-        return _progress;
+        return progress;
     }
 
-    public void setProgress(int _progress) {
-        this._progress = _progress;
+    public void setProgress(int progress) {
+        this.progress = progress;
     }
 
     @Schema(description="Walltime in milliseconds task took to run")
     public long getWallTime() {
-        return _wallTime;
+        return wallTime;
     }
 
-    public void setWallTime(long _wallTime) {
-        this._wallTime = _wallTime;
+    public void setWallTime(long wallTime) {
+        this.wallTime = wallTime;
     }
 
     @Schema(description="Time in milliseconds since 1969 epoch when task started")
     public long getStartTime() {
-        return _startTime;
+        return startTime;
     }
 
-    public void setStartTime(long _startTime) {
-        this._startTime = _startTime;
+    public void setStartTime(long startTime) {
+        this.startTime = startTime;
     }
 }

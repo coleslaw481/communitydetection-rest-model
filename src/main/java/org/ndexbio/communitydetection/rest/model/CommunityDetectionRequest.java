@@ -9,27 +9,27 @@ import java.util.Map;
  */
 public class CommunityDetectionRequest {
     
-    private String _algorithm;
-    private Boolean _graphdirected;
-    private String _edgeList;
-    private String _ipAddress;
-    private Map<String, String> _customParameters;
+    private String algorithm;
+    private Boolean graphdirected;
+    private String edgeList;
+    private String ipAddress;
+    private Map<String, String> customParameters;
 
     /**
      * Gets the name of the algorithm to use with this request
      * @return 
      */
-    @Schema(description="Name community detection algorithm to run", example="louvain")
+    @Schema(description="Name of algorithm to run", example="louvain")
     public String getAlgorithm() {
-        return _algorithm;
+        return algorithm;
     }
 
     /**
      * Sets the name of the algorithm to use with this request
      * @param _algorithm 
      */
-    public void setAlgorithm(String _algorithm) {
-        this._algorithm = _algorithm;
+    public void setAlgorithm(String algorithm) {
+        this.algorithm = algorithm;
     }
 
     /**
@@ -40,7 +40,7 @@ public class CommunityDetectionRequest {
      */
     @Schema(description="Set to true to request a directed graph from community detection algorithm")
     public Boolean getGraphdirected() {
-        return _graphdirected;
+        return graphdirected;
     }
 
     /**
@@ -48,8 +48,8 @@ public class CommunityDetectionRequest {
      * a directed graph or not
      * @param _graphdirected Set to true for directed results
      */
-    public void setGraphdirected(Boolean _graphdirected) {
-        this._graphdirected = _graphdirected;
+    public void setGraphdirected(Boolean graphdirected) {
+        this.graphdirected = graphdirected;
     }
 
     /**
@@ -57,9 +57,11 @@ public class CommunityDetectionRequest {
      * SOURCENODE1\tTARGETNODE1\nSOURCENODE2\tTARGETNODE2\n
      * @return 
      */
-    @Schema(description="Edge list in form of SOURCENODE1\\tTARGETNODE1\\nSOURCENODE2\\tTARGETNODE2\\n with optional 3rd tab delimited column containing weight")
+    @Schema(description="Edge as CX network, for optional weights set edge attribute named 'weight OR "
+            + "Edge list in form of SOURCENODE1\\tTARGETNODE1\\nSOURCENODE2\\tTARGETNODE2\\n "
+            + "with optional 3rd tab delimited column containing weight")
     public String getEdgeList() {
-        return _edgeList;
+        return edgeList;
     }
 
     /**
@@ -67,27 +69,25 @@ public class CommunityDetectionRequest {
      * SOURCENODE1\tTARGETNODE1\nSOURCENODE2\tTARGETNODE2\n
      * @param _edgeList 
      */
-    public void setEdgeList(String _edgeList) {
-        this._edgeList = _edgeList;
+    public void setEdgeList(String edgeList) {
+        this.edgeList = edgeList;
     }
 
     @Schema(description="IP address where request originated")
     public String getIpAddress() {
-        return _ipAddress;
+        return ipAddress;
     }
 
-    public void setIpAddress(String _ipAddress) {
-        this._ipAddress = _ipAddress;
+    public void setIpAddress(String ipAddress) {
+        this.ipAddress = ipAddress;
     }
     
     @Schema(description="Optional custom parameters for community detection algorithm")
     public Map<String, String> getCustomParameters() {
-        return _customParameters;
+        return customParameters;
     }
 
-    public void setCustomParameters(Map<String, String> _customParameters) {
-        this._customParameters = _customParameters;
+    public void setCustomParameters(Map<String, String> customParameters) {
+        this.customParameters = customParameters;
     }
-    
-    
 }

@@ -17,23 +17,23 @@ import java.util.Locale;
  */
 public class ErrorResponse {
     
-    private String _errorCode;
-    private String _message;
-    private String _description;
-    private String _stackTrace;
-    private String _threadId;
-    private String _timeStamp;
+    private String errorCode;
+    private String message;
+    private String description;
+    private String stackTrace;
+    private String threadId;
+    private String timeStamp;
     
     public ErrorResponse(){
         LocalDateTime ldt = LocalDateTime.now(ZoneId.of("UTC"));
-        _timeStamp = DateTimeFormatter.ofPattern("yyyy-MM-dd_HH:mm.s",
+        timeStamp = DateTimeFormatter.ofPattern("yyyy-MM-dd_HH:mm.s",
                                                  Locale.ENGLISH).format(ldt);
     }
     
     public ErrorResponse(final String message, Exception ex){
         this();
-        _message = message;
-        _description = ex.getMessage();
+        this.message = message;
+        description = ex.getMessage();
         StringBuilder stackTraceStr = new StringBuilder();
         int counter = 0;
         for (StackTraceElement ste : ex.getStackTrace()){
@@ -43,8 +43,8 @@ public class ErrorResponse {
             }
             counter++;
         }
-        _stackTrace = stackTraceStr.toString();
-        _threadId = Long.toString(Thread.currentThread().getId());
+        stackTrace = stackTraceStr.toString();
+        threadId = Long.toString(Thread.currentThread().getId());
     }
 
     private String getValueAsJsonString(final String value){
@@ -93,56 +93,56 @@ public class ErrorResponse {
 
     @Schema(description="Error code to help identify issue")
     public String getErrorCode() {
-        return _errorCode;
+        return errorCode;
     }
 
-    public void setErrorCode(String _errorCode) {
-        this._errorCode = _errorCode;
+    public void setErrorCode(String errorCode) {
+        this.errorCode = errorCode;
     }
 
     @Schema(description="Human readable description of error")
     public String getMessage() {
-        return _message;
+        return message;
     }
 
-    public void setMessage(String _message) {
-        this._message = _message;
+    public void setMessage(String message) {
+        this.message = message;
     }
 
     @Schema(description="More detailed description of error")
     public String getDescription() {
-        return _description;
+        return description;
     }
 
-    public void setDescription(String _description) {
-        this._description = _description;
+    public void setDescription(String description) {
+        this.description = description;
     }
 
     @Schema(description="Stack trace of error")
     public String getStackTrace() {
-        return _stackTrace;
+        return stackTrace;
     }
 
-    public void setStackTrace(String _stackTrace) {
-        this._stackTrace = _stackTrace;
+    public void setStackTrace(String stackTrace) {
+        this.stackTrace = stackTrace;
     }
 
     @Schema(description="Id of thread running process")
     public String getThreadId() {
-        return _threadId;
+        return threadId;
     }
 
-    public void setThreadId(String _threadId) {
-        this._threadId = _threadId;
+    public void setThreadId(String threadId) {
+        this.threadId = threadId;
     }
 
     @Schema(description="UTC Time stamp in YYYY-MM-DD_HH:MM.S")
     public String getTimeStamp() {
-        return _timeStamp;
+        return timeStamp;
     }
 
-    public void setTimeStamp(String _timeStamp) {
-        this._timeStamp = _timeStamp;
+    public void setTimeStamp(String timeStamp) {
+        this.timeStamp = timeStamp;
     }
     
 }

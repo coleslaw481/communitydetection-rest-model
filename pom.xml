@@ -4,7 +4,7 @@
 
     <groupId>org.ndexbio.communitydetection.rest.model</groupId>
     <artifactId>communitydetection-rest-model</artifactId>
-    <version>0.2.0</version>
+    <version>0.2.1</version>
     <packaging>jar</packaging>
 
     <name>Community Detection Object Model</name>
