@@ -58,7 +58,7 @@ public class CommunityDetectionRequest {
      * SOURCENODE1\tTARGETNODE1\nSOURCENODE2\tTARGETNODE2\n
      * @return 
      */
-    @Schema(description="data as json fragment ")
+    @Schema(description="data as json fragment")
     public JsonNode getData() {
         return data;
     }
