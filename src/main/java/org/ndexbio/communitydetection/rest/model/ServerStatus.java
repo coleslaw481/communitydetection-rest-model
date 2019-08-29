@@ -15,7 +15,8 @@ public class ServerStatus {
     private String status;
     private int pcDiskFull;
     private List<Float> load;
-    private List<Integer> queries;
+    private int queuedTasks;
+    private int completedTasks;
     private String restVersion;
     
 
@@ -55,15 +56,6 @@ public class ServerStatus {
         this.load = load;
     }
 
-    @Schema(description="List of 5 integers containing # queries in last minute, 5 minutes, 15 minutes, hour, 24 hours")
-    public List<Integer> getQueries() {
-        return queries;
-    }
-
-    public void setQueries(List<Integer> queries) {
-        this.queries = queries;
-    }
-
    
     @Schema(description="Gets version of this service")
     public String getRestVersion() {
@@ -73,4 +65,24 @@ public class ServerStatus {
     public void setRestVersion(String restVersion) {
         this.restVersion = restVersion;
     }    
+
+    @Schema(description="Gets number of currently queued/running tasks")
+    public int getQueuedTasks() {
+        return queuedTasks;
+    }
+
+    public void setQueuedTasks(int queuedTasks) {
+        this.queuedTasks = queuedTasks;
+    }
+
+    @Schema(description="Gets number of completed tasks since last restart of this service")
+    public int getCompletedTasks() {
+        return completedTasks;
+    }
+
+    public void setCompletedTasks(int completedTasks) {
+        this.completedTasks = completedTasks;
+    }
+    
+    
 }

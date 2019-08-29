@@ -25,7 +25,8 @@ public class TestServerStatus {
         ServerStatus ss = new ServerStatus();
         assertEquals(null, ss.getLoad());
         assertEquals(0, ss.getPcDiskFull());
-        assertEquals(null, ss.getQueries());
+        assertEquals(0, ss.getCompletedTasks());
+        assertEquals(0, ss.getQueuedTasks());
         assertEquals(null, ss.getRestVersion());
         assertEquals(null, ss.getStatus());
         
@@ -33,16 +34,16 @@ public class TestServerStatus {
         load.add(Float.NaN);
         ss.setLoad(load);
         ss.setPcDiskFull(10);
-        ArrayList<Integer> query = new ArrayList<>();
-        query.add(1);
-        ss.setQueries(query);
+        ss.setQueuedTasks(1);
+        ss.setCompletedTasks(2);
         
         ss.setRestVersion("version");
         ss.setStatus("status");
         
         assertEquals((float)Float.NaN, (float)ss.getLoad().get(0));
         assertEquals(10, ss.getPcDiskFull());
-        assertEquals(1, (int)ss.getQueries().get(0));
+        assertEquals(1, ss.getQueuedTasks());
+        assertEquals(2, ss.getCompletedTasks());
         assertEquals("version", ss.getRestVersion());
         assertEquals("status", ss.getStatus());
         
