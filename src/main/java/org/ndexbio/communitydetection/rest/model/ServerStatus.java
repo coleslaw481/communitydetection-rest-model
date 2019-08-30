@@ -17,6 +17,7 @@ public class ServerStatus {
     private List<Float> load;
     private int queuedTasks;
     private int completedTasks;
+    private int canceledTasks;
     private String restVersion;
     
 
@@ -83,6 +84,13 @@ public class ServerStatus {
     public void setCompletedTasks(int completedTasks) {
         this.completedTasks = completedTasks;
     }
-    
-    
+
+    @Schema(description="Gets number of canceled tasks since last restart of this service")
+    public int getCanceledTasks() {
+        return canceledTasks;
+    }
+
+    public void setCanceledTasks(int canceledTasks) {
+        this.canceledTasks = canceledTasks;
+    }
 }
