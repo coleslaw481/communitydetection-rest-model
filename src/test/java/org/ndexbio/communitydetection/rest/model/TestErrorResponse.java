@@ -1,11 +1,5 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-package org.ndexbio.enrichment.rest.model;
+package org.ndexbio.communitydetection.rest.model;
 
-import org.ndexbio.communitydetection.rest.model.ErrorResponse;
 import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;
 import org.ndexbio.communitydetection.rest.model.exceptions.CommunityDetectionException;

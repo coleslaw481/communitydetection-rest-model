@@ -1,7 +1,6 @@
-package org.ndexbio.enrichment.rest.model;
+package org.ndexbio.communitydetection.rest.model;
 
-import org.ndexbio.communitydetection.rest.model.CommunityDetectionResult;
-import java.util.ArrayList;
+import com.fasterxml.jackson.databind.node.TextNode;
 import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;
 /**
@@ -35,24 +34,30 @@ public class TestCommunityDetectionResult {
     @Test
     public void testGettersAndSetters(){
         CommunityDetectionResult eqr = new CommunityDetectionResult();
+        assertEquals(null, eqr.getId());
         assertEquals(null, eqr.getMessage());
         assertEquals(0, eqr.getProgress());
         assertEquals(0, eqr.getStartTime());
         assertEquals(null, eqr.getStatus());
         assertEquals(0, eqr.getWallTime());
+        assertEquals(null, eqr.getResult());
         
+        eqr.setId("id");
         eqr.setMessage("message");
         eqr.setProgress(2);
         
         eqr.setStartTime(5);
         eqr.setStatus("status");
         eqr.setWallTime(6);
+        TextNode tnode = new TextNode("hi");
+        eqr.setResult(tnode);
         
-        
+        assertEquals("id", eqr.getId());
         assertEquals("message", eqr.getMessage());
         assertEquals(2, eqr.getProgress());
         assertEquals(5, eqr.getStartTime());
         assertEquals("status", eqr.getStatus());
         assertEquals(6, eqr.getWallTime());
+        assertEquals(tnode, eqr.getResult());
     }
 }
