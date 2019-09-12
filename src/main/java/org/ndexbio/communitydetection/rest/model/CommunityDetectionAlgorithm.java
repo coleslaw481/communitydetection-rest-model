@@ -1,6 +1,6 @@
 package org.ndexbio.communitydetection.rest.model;
 
-import java.util.List;
+import java.util.Set;
 
 /**
  *
@@ -10,7 +10,7 @@ public class CommunityDetectionAlgorithm {
     
     private String name;
     private String description;
-    private List<CustomParameters> customParameters;
+    private Set<CustomParameters> customParameters;
     
     public String getName() {
         return name;
@@ -28,11 +28,11 @@ public class CommunityDetectionAlgorithm {
         this.description = description;
     }
 
-    public List<CustomParameters> getCustomParameters() {
+    public Set<CustomParameters> getCustomParameters() {
         return customParameters;
     }
 
-    public void setCustomParameters(List<CustomParameters> customParameters) {
+    public void setCustomParameters(Set<CustomParameters> customParameters) {
         this.customParameters = customParameters;
     }
 }
