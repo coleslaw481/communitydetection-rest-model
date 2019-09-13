@@ -37,9 +37,8 @@ public class CustomParameter {
         this.description = description;
     }
 
-    @Schema(description="Type of parameter, can be text|flag where"
-            + "text is a parameter expecting some value and flag is a"
-            + "boolean, which if set implies True otherwise False")
+    @Schema(description="Type of parameter",
+            allowableValues={"text","flag"})
     public String getType() {
         return type;
     }
@@ -67,11 +66,15 @@ public class CustomParameter {
         this.displayName = displayName;
     }
 
-    @Schema(description="Type of validation to perform can be: number|digits|string\n"
-            + " 'number' only allows floating point number or numbers with decimals\n"
+    /*
+                + " 'number' only allows floating point number or numbers with decimals\n"
             + " 'digits' is whole numbers and can include - for negative\n"
             + " Both 'number' and 'digits' can be limited by 'minValue' and 'maxValue'"
             + "'string' allows ASCI characters and can be limited by 'validationRegex'")
+
+    */
+    @Schema(description="Type of validation to perform",
+            allowableValues={"number","digits","string"})
     public String getValidationType() {
         return validationType;
     }
