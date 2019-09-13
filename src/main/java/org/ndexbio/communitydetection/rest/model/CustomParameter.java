@@ -38,7 +38,7 @@ public class CustomParameter {
     }
 
     @Schema(description="Type of parameter",
-            allowableValues={"text","flag"})
+            allowableValues={"value","flag"})
     public String getType() {
         return type;
     }

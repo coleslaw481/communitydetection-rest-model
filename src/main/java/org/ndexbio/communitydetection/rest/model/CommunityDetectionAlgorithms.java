@@ -1,6 +1,6 @@
 package org.ndexbio.communitydetection.rest.model;
 
-import java.util.Set;
+import java.util.HashMap;
 
 /**
  *
@@ -8,13 +8,13 @@ import java.util.Set;
  */
 public class CommunityDetectionAlgorithms {
     
-    private Set<CommunityDetectionAlgorithm> algorithms;
+    private HashMap<String, CommunityDetectionAlgorithm> algorithms;
 
-    public Set<CommunityDetectionAlgorithm> getAlgorithms() {
+    public HashMap<String, CommunityDetectionAlgorithm> getAlgorithms() {
         return algorithms;
     }
 
-    public void setAlgorithms(Set<CommunityDetectionAlgorithm> algorithms) {
+    public void setAlgorithms(HashMap<String, CommunityDetectionAlgorithm> algorithms) {
         this.algorithms = algorithms;
     }
 }

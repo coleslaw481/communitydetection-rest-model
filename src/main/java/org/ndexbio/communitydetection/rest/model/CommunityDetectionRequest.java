@@ -11,9 +11,7 @@ import java.util.Map;
 public class CommunityDetectionRequest {
     
     private String algorithm;
-    private Boolean graphdirected;
     private JsonNode data;
-    private String ipAddress;
     private Map<String, String> customParameters;
 
     /**
@@ -34,26 +32,6 @@ public class CommunityDetectionRequest {
     }
 
     /**
-     * Gets whether the community detection algorithm should generate
-     * a directed graph or not
-     * 
-     * @return 
-     */
-    @Schema(description="Set to true to request a directed graph from community detection algorithm")
-    public Boolean getGraphdirected() {
-        return graphdirected;
-    }
-
-    /**
-     * Sets whether the community detection algorithm should generate
-     * a directed graph or not
-     * @param _graphdirected Set to true for directed results
-     */
-    public void setGraphdirected(Boolean graphdirected) {
-        this.graphdirected = graphdirected;
-    }
-
-    /**
      * Gets data as string which should be in format of
      * SOURCENODE1\tTARGETNODE1\nSOURCENODE2\tTARGETNODE2\n
      * @return 
@@ -70,17 +48,8 @@ public class CommunityDetectionRequest {
     public void setData(JsonNode data) {
         this.data = data;
     }
-
-    @Schema(description="IP address where request originated")
-    public String getIpAddress() {
-        return ipAddress;
-    }
-
-    public void setIpAddress(String ipAddress) {
-        this.ipAddress = ipAddress;
-    }
     
-    @Schema(description="Optional custom parameters for community detection algorithm")
+    @Schema(description="Optional custom parameters in simple map format arg: value")
     public Map<String, String> getCustomParameters() {
         return customParameters;
     }
