@@ -12,6 +12,7 @@ public class CommunityDetectionAlgorithm {
     private String name;
     private String description;
     private String version;
+    private String dockerImage;
     private String inputDataFormat;
     private String outputDataFormat;
     private Set<CustomParameter> customParameters;
@@ -41,6 +42,15 @@ public class CommunityDetectionAlgorithm {
 
     public void setVersion(String version) {
         this.version = version;
+    }
+
+    @Schema(description="Docker image")
+    public String getDockerImage() {
+        return dockerImage;
+    }
+
+    public void setDockerImage(String dockerImage) {
+        this.dockerImage = dockerImage;
     }
 
      @Schema(description="Expected format of input data. Currently supported formats "
