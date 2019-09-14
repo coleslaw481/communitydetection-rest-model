@@ -1,6 +1,10 @@
 package org.ndexbio.communitydetection.rest.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import io.swagger.v3.oas.annotations.media.Schema;
+import java.util.HashMap;
+import java.util.HashSet;
+import java.util.Map;
 import java.util.Set;
 
 /**
@@ -15,7 +19,7 @@ public class CommunityDetectionAlgorithm {
     private String dockerImage;
     private String inputDataFormat;
     private String outputDataFormat;
-    private Set<CustomParameter> customParameters;
+    private HashMap<String, CustomParameter> customParameters;
     
     @Schema(description="Name of algorithm")
     public String getName() {
@@ -81,10 +85,32 @@ public class CommunityDetectionAlgorithm {
 
     @Schema(description="Any custom parameters this algorithm accepts")
     public Set<CustomParameter> getCustomParameters() {
-        return customParameters;
+        if (customParameters == null){
+            return null;
+        }
+        return new HashSet(customParameters.values());
     }
 
     public void setCustomParameters(Set<CustomParameter> customParameters) {
-        this.customParameters = customParameters;
+        if (customParameters == null){
+            this.customParameters = null;
+            return;
+        }
+        if (this.customParameters == null){
+            this.customParameters = new HashMap<>();
+        }else {
+            this.customParameters.clear();
+        }
+        for (CustomParameter cp : customParameters){
+            if (cp.getName() == null){
+                continue;
+            }
+            this.customParameters.put(cp.getName(), cp);
+        }
+    }
+    
+    @JsonIgnore
+    public Map<String, CustomParameter> getCustomParameterMap(){
+        return this.customParameters;
     }
 }
