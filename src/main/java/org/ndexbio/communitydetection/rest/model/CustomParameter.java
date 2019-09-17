@@ -23,8 +23,8 @@ public class CustomParameter {
     private String validationType;
     private String validationHelp;
     private String validationRegex;
-    private Double minValue;
-    private Double maxValue;
+    private Number minValue;
+    private Number maxValue;
     
     @Schema(description="Name of parameter")
     public String getName() {
@@ -116,7 +116,7 @@ public class CustomParameter {
             CustomParameter.NUMBER_VALIDATION + "' or '" +
             CustomParameter.DIGITS_VALIDATION + "', "
             + " values below this should NOT be allowed")
-    public Double getMinValue() {
+    public Number getMinValue() {
         return minValue;
     }
 
@@ -128,11 +128,11 @@ public class CustomParameter {
             CustomParameter.NUMBER_VALIDATION + "' or '" +
             CustomParameter.DIGITS_VALIDATION + "', "
             + " values above this should NOT be allowed")
-    public Double getMaxValue() {
+    public Number getMaxValue() {
         return maxValue;
     }
 
-    public void setMaxValue(double maxValue) {
+    public void setMaxValue(Number maxValue) {
         this.maxValue = maxValue;
     }
 }
