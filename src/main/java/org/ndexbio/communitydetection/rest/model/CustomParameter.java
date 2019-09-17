@@ -8,6 +8,13 @@ import io.swagger.v3.oas.annotations.media.Schema;
  */
 public class CustomParameter {
     
+    public static final String VALUE_TYPE = "value";
+    public static final String FLAG_TYPE = "flag";
+    
+    public static final String NUMBER_VALIDATION = "number";
+    public static final String DIGITS_VALIDATION = "digits";
+    public static final String STRING_VALIDATION = "string";
+    
     private String name;
     private String displayName;
     private String description;
@@ -38,7 +45,8 @@ public class CustomParameter {
     }
 
     @Schema(description="Type of parameter",
-            allowableValues={"value","flag"})
+            allowableValues={CustomParameter.VALUE_TYPE,
+                             CustomParameter.FLAG_TYPE})
     public String getType() {
         return type;
     }
@@ -74,7 +82,9 @@ public class CustomParameter {
 
     */
     @Schema(description="Type of validation to perform",
-            allowableValues={"number","digits","string"})
+            allowableValues={CustomParameter.NUMBER_VALIDATION,
+                CustomParameter.DIGITS_VALIDATION,
+                CustomParameter.STRING_VALIDATION})
     public String getValidationType() {
         return validationType;
     }
@@ -102,7 +112,9 @@ public class CustomParameter {
         this.validationRegex = validationRegex;
     }
 
-    @Schema(description="If set and parameter is of type 'number' or 'digits', "
+    @Schema(description="If set and parameter is of type '" +
+            CustomParameter.NUMBER_VALIDATION + "' or '" +
+            CustomParameter.DIGITS_VALIDATION + "', "
             + " values below this should NOT be allowed")
     public Double getMinValue() {
         return minValue;
@@ -112,7 +124,9 @@ public class CustomParameter {
         this.minValue = minValue;
     }
 
-    @Schema(description="If set and parameter is of type 'number' or 'digits', "
+    @Schema(description="If set and parameter is of type '" +
+            CustomParameter.NUMBER_VALIDATION + "' or '" +
+            CustomParameter.DIGITS_VALIDATION + "', "
             + " values above this should NOT be allowed")
     public Double getMaxValue() {
         return maxValue;
