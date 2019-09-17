@@ -120,7 +120,7 @@ public class CustomParameter {
         return minValue;
     }
 
-    public void setMinValue(double minValue) {
+    public void setMinValue(Number minValue) {
         this.minValue = minValue;
     }
 
