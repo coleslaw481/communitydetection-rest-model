@@ -51,7 +51,7 @@ public class ErrorResponse {
         if (value == null){
             return "null";
         }
-        return "\"" + value + "\"";
+        return "\"" + value.replaceAll("\"", "\\\\\"") + "\"";
     }
     /**
      * Fallback implementation of json version of object

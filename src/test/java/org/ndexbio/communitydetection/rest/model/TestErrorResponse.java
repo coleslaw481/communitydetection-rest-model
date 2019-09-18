@@ -26,6 +26,12 @@ public class TestErrorResponse {
         String res = er.asJson();
         assertTrue(res.startsWith("{\"message\": \"hi\","));
         assertTrue(res.contains("\"description\": \"yo\","));
+        
+        // test with quote in values
+        er = new ErrorResponse("well \"quote\"", new CommunityDetectionException("\"quote\" this"));
+        res = er.asJson();
+        assertTrue(res.startsWith("{\"message\": \"well \\\"quote\\\"\","));
+        assertTrue(res.contains("\"description\": \"\\\"quote\\\" this\","));
     }
     
     @Test
