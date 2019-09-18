@@ -1,6 +1,7 @@
 package org.ndexbio.communitydetection.rest.model;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
+import io.swagger.v3.oas.annotations.ExternalDocumentation;
 import io.swagger.v3.oas.annotations.media.Schema;
 import java.util.HashMap;
 import java.util.HashSet;
@@ -57,11 +58,8 @@ public class CommunityDetectionAlgorithm {
         this.dockerImage = dockerImage;
     }
 
-     @Schema(description="Expected format of input data. Currently supported formats "
-             + "are:\n"
-             + "'CX' for NDEx exchange format: https://home.ndexbio.org/data-model/\n"
-             + "'EDGELIST' in format: https://github.com/ndexbio/communitydetection-rest-server/wiki/EDGELIST-format\n"
-             + "'COMMUNITYDETECTRESULT' in format: TODO")
+    @Schema(description="Expected format of input data. For supported formats see: "
+            + " https://github.com/ndexbio/communitydetection-rest-server/wiki/Data-formats\n")
     public String getInputDataFormat() {
         return inputDataFormat;
     }
@@ -70,11 +68,8 @@ public class CommunityDetectionAlgorithm {
         this.inputDataFormat = inputDataFormat;
     }
 
-    @Schema(description="Format of output data. Currently supported formats "
-             + "are:\n"
-             + "'CX' for NDEx exchange format: https://home.ndexbio.org/data-model/\n"
-             + "'EDGELIST' in format: https://github.com/ndexbio/communitydetection-rest-server/wiki/EDGELIST-format\n"
-             + "'COMMUNITYDETECTRESULT' in format: TODO")
+    @Schema(description="Format of output data. For supported formats see: "
+            + " https://github.com/ndexbio/communitydetection-rest-server/wiki/Data-formats\n")
     public String getOutputDataFormat() {
         return outputDataFormat;
     }
