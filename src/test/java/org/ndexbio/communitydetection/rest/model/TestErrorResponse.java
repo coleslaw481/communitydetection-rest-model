@@ -32,6 +32,12 @@ public class TestErrorResponse {
         res = er.asJson();
         assertTrue(res.startsWith("{\"message\": \"well \\\"quote\\\"\","));
         assertTrue(res.contains("\"description\": \"\\\"quote\\\" this\","));
+        
+        // test with newline carriage return and tabs
+        er = new ErrorResponse("well\nquote\t", new CommunityDetectionException("\rquote\nthis"));
+        res = er.asJson();
+        assertTrue(res.startsWith("{\"message\": \"well quote \","));
+        assertTrue(res.contains("\"description\": \" quote this\","));
     }
     
     @Test
