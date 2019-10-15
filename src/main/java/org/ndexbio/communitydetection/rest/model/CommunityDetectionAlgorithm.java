@@ -15,6 +15,7 @@ import java.util.Set;
 public class CommunityDetectionAlgorithm {
     
     private String name;
+    private String displayName;
     private String description;
     private String version;
     private String dockerImage;
@@ -29,6 +30,15 @@ public class CommunityDetectionAlgorithm {
 
     public void setName(String name) {
         this.name = name;
+    }
+
+    @Schema(description="Display name of algorithm")
+    public String getDisplayName() {
+	return displayName;
+    }
+
+    public void setDisplayName(String displayName) {
+	this.displayName = displayName;
     }
 
     @Schema(description="Description of algorithm")
