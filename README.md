@@ -3,16 +3,16 @@
 [maven]: http://maven.apache.org/
 [java]: https://www.oracle.com/java/index.html
 [git]: https://git-scm.com/
-
+[cdservice]: https://github.com/idekerlab/communitydetection-rest-server 
 [make]: https://www.gnu.org/software/make
 
 Community Detection Object Model
 =================================
 
-[![Build Status](https://travis-ci.org/ndexbio/communitydetection-rest-model.svg?branch=master)](https://travis-ci.org/ndexbio/communitydetection-rest-model)
-[![Coverage Status](https://coveralls.io/repos/github/ndexbio/communitydetection-rest-model/badge.svg?branch=master)](https://coveralls.io/github/ndexbio/communitydetection-rest-model?branch=master)
+[![Build Status](https://travis-ci.org/idekerlab/communitydetection-rest-model.svg?branch=master)](https://travis-ci.org/idekerlab/communitydetection-rest-model)
+[![Coverage Status](https://coveralls.io/repos/github/idekerlab/communitydetection-rest-model/badge.svg?branch=master)](https://coveralls.io/github/idekerlab/communitydetection-rest-model?branch=master)
 
-Contains Java Pojo objects needed by Community Detection REST Service
+Contains Java Pojo objects needed by [Community Detection REST Service][cdservice]
 
 
 
@@ -20,8 +20,6 @@ Requirements
 ============
 
 * [Java][java] 8+ **(jdk to build)**
-
-
 
 Building  
 ========
@@ -35,7 +33,7 @@ Build requirements:
 
 ```Bash
 # In lieu of git one can just download repo and unzip it
-git clone https://github.com/ndexbio/communitydetection-rest-model.git
+git clone https://github.com/idekerlab/communitydetection-rest-model.git
 
 cd communitydetection-rest-model
 mvn install
@@ -51,7 +49,7 @@ The above command will create a jar file under **target/** named
 COPYRIGHT AND LICENSE
 =====================
 
-TODO
+[Click here](LICENSE)
 
 Acknowledgements
 ================
