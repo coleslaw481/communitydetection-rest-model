@@ -7,7 +7,7 @@
 [make]: https://www.gnu.org/software/make
 
 Community Detection Object Model
-=================================
+==================================
 
 [![Build Status](https://travis-ci.org/idekerlab/communitydetection-rest-model.svg?branch=master)](https://travis-ci.org/idekerlab/communitydetection-rest-model)
 [![Coverage Status](https://coveralls.io/repos/github/idekerlab/communitydetection-rest-model/badge.svg?branch=master)](https://coveralls.io/github/idekerlab/communitydetection-rest-model?branch=master)
