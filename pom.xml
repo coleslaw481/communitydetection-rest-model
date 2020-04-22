@@ -25,6 +25,19 @@
         <swagger.version>2.0.0</swagger.version>
     </properties>
     
+    <distributionManagement>
+        <repository>
+            <id>cytoscape_releases</id>
+            <name>Cytoscape Releases</name>
+            <url>http://nrnb-nexus.ucsd.edu/repository/cytoscape_releases/</url>
+        </repository>
+        <snapshotRepository>
+            <id>cytoscape_snapshots</id>
+            <name>Cytoscape Snapshots</name>
+            <url>http://nrnb-nexus.ucsd.edu/repository/cytoscape_snapshots/</url>
+        </snapshotRepository>
+    </distributionManagement>
+    
     <dependencies>
         <dependency>
             <groupId>io.swagger.core.v3</groupId>
@@ -68,7 +81,7 @@
         </dependency>
     </dependencies>
     <scm>
-	  <connection>scm:git:https://github.com/ndexbio/ndex-enrichment-rest-model.git</connection>
+	  <connection>scm:git:https://github.com/cytoscape/communitydetection-rest-model.git</connection>
     </scm>
     <build>
         <pluginManagement>
