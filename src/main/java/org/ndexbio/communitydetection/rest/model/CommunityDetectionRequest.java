@@ -1,5 +1,6 @@
 package org.ndexbio.communitydetection.rest.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.databind.JsonNode;
 import io.swagger.v3.oas.annotations.media.Schema;
 import java.util.Map;
@@ -8,6 +9,7 @@ import java.util.Map;
  * Represents an Community Detection Request
  * @author churas
  */
+@JsonIgnoreProperties(ignoreUnknown = true)
 public class CommunityDetectionRequest {
     
     private String algorithm;

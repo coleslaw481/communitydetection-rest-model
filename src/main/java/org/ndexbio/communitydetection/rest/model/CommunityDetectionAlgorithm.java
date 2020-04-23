@@ -1,7 +1,7 @@
 package org.ndexbio.communitydetection.rest.model;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
-import io.swagger.v3.oas.annotations.ExternalDocumentation;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import io.swagger.v3.oas.annotations.media.Schema;
 import java.util.HashMap;
 import java.util.HashSet;
@@ -12,6 +12,7 @@ import java.util.Set;
  *
  * @author churas
  */
+@JsonIgnoreProperties(ignoreUnknown = true)
 public class CommunityDetectionAlgorithm {
     
     private String name;
@@ -69,7 +70,7 @@ public class CommunityDetectionAlgorithm {
     }
 
     @Schema(description="Expected format of input data. For supported formats see: "
-            + " https://github.com/ndexbio/communitydetection-rest-server/wiki/Data-formats\n")
+            + " https://github.com/cytoscape/communitydetection-rest-server/wiki/Data-formats\n")
     public String getInputDataFormat() {
         return inputDataFormat;
     }
@@ -79,7 +80,7 @@ public class CommunityDetectionAlgorithm {
     }
 
     @Schema(description="Format of output data. For supported formats see: "
-            + " https://github.com/ndexbio/communitydetection-rest-server/wiki/Data-formats\n")
+            + " https://github.com/cytoscape/communitydetection-rest-server/wiki/Data-formats\n")
     public String getOutputDataFormat() {
         return outputDataFormat;
     }
