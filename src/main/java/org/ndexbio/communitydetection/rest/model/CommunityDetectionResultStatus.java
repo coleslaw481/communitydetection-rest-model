@@ -1,11 +1,13 @@
 package org.ndexbio.communitydetection.rest.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import io.swagger.v3.oas.annotations.media.Schema;
 
 /**
  *
  * @author churas
  */
+@JsonIgnoreProperties(ignoreUnknown = true)
 public class CommunityDetectionResultStatus extends JobStatus {
     
     private String id;

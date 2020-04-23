@@ -1,10 +1,6 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package org.ndexbio.communitydetection.rest.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import io.swagger.v3.oas.annotations.media.Schema;
 import java.time.LocalDateTime;
 import java.time.ZoneId;
@@ -15,6 +11,7 @@ import java.util.Locale;
  * Encapsulates an error encountered by the server
  * @author churas
  */
+@JsonIgnoreProperties(ignoreUnknown = true)
 public class ErrorResponse {
     
     private String errorCode;
