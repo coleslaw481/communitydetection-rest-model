@@ -69,7 +69,7 @@ public class CommunityDetectionAlgorithm {
     }
 
     @Schema(description="Expected format of input data. For supported formats see: "
-            + " https://github.com/ndexbio/communitydetection-rest-server/wiki/Data-formats\n")
+            + " https://github.com/cytoscape/communitydetection-rest-server/wiki/Data-formats\n")
     public String getInputDataFormat() {
         return inputDataFormat;
     }
@@ -79,7 +79,7 @@ public class CommunityDetectionAlgorithm {
     }
 
     @Schema(description="Format of output data. For supported formats see: "
-            + " https://github.com/ndexbio/communitydetection-rest-server/wiki/Data-formats\n")
+            + " https://github.com/cytoscape/communitydetection-rest-server/wiki/Data-formats\n")
     public String getOutputDataFormat() {
         return outputDataFormat;
     }
