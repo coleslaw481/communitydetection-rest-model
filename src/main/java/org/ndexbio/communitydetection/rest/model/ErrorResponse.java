@@ -44,12 +44,6 @@ public class ErrorResponse {
         threadId = Long.toString(Thread.currentThread().getId());
     }
 
-    private String getValueAsJsonString(final String value){
-        if (value == null){
-            return "null";
-        }
-        return "\"" + value.replaceAll("\"", "\\\\\"").replaceAll("\n|\t|\r", " ") + "\"";
-    }
     /**
      * Fallback implementation of json version of object
      * {"message":"hi",
@@ -63,27 +57,27 @@ public class ErrorResponse {
     public String asJson(){
         StringBuilder sb = new StringBuilder();
         sb.append("{\"message\": ");
-        sb.append(this.getValueAsJsonString(getMessage()));
+        sb.append(JsonUtil.getValueAsJsonString(getMessage()));
         sb.append(",\n");
         
         sb.append("\"stackTrace\": ");
-        sb.append(this.getValueAsJsonString(getStackTrace()));
+        sb.append(JsonUtil.getValueAsJsonString(getStackTrace()));
         sb.append(",\n");
 
         sb.append("\"threadId\": ");
-        sb.append(this.getValueAsJsonString(getThreadId()));
+        sb.append(JsonUtil.getValueAsJsonString(getThreadId()));
         sb.append(",\n");
 
         sb.append("\"description\": ");
-        sb.append(this.getValueAsJsonString(getDescription()));
+        sb.append(JsonUtil.getValueAsJsonString(getDescription()));
         sb.append(",\n");
 
         sb.append("\"errorCode\": ");
-        sb.append(this.getValueAsJsonString(getErrorCode()));
+        sb.append(JsonUtil.getValueAsJsonString(getErrorCode()));
         sb.append(",\n");
         
         sb.append("\"timeStamp\": ");
-        sb.append(this.getValueAsJsonString(getTimeStamp()));
+        sb.append(JsonUtil.getValueAsJsonString(getTimeStamp()));
         sb.append("}");
         return sb.toString();
     }
