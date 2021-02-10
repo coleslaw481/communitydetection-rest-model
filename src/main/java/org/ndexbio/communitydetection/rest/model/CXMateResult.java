@@ -42,6 +42,8 @@ public class CXMateResult {
 		if (error != null){
 			if (error.getMessage() != null){
 				cError.setMessage(error.getMessage());
+			} else {
+				cError.setMessage("Unknown");
 			}
 			if (error.getDescription() != null){
 				cError.setMessage(cError.getMessage() + " : " + error.getDescription());
