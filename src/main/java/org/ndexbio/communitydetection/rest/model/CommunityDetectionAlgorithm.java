@@ -22,6 +22,9 @@ public class CommunityDetectionAlgorithm {
     private String dockerImage;
     private String inputDataFormat;
     private String outputDataFormat;
+	private String rawResultContentType;
+	private boolean binaryResult;
+	
     private HashMap<String, CustomParameter> customParameters;
     
     @Schema(description="Name of algorithm")
@@ -96,6 +99,22 @@ public class CommunityDetectionAlgorithm {
         }
         return new HashSet(customParameters.values());
     }
+
+	public String getRawResultContentType() {
+		return rawResultContentType;
+	}
+
+	public void setRawResultContentType(String rawResultContentType) {
+		this.rawResultContentType = rawResultContentType;
+	}
+
+	public boolean isBinaryResult() {
+		return binaryResult;
+	}
+
+	public void setBinaryResult(boolean binaryResult) {
+		this.binaryResult = binaryResult;
+	}
 
     public void setCustomParameters(Set<CustomParameter> customParameters) {
         if (customParameters == null){
